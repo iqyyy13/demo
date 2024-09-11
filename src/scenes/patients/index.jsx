@@ -12,7 +12,7 @@ import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOu
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 import Switch from '@mui/material/Switch'
 import Header from '../../components/Header.jsx'
-import { Table } from ' '
+import { Table } from 'antd'
 
 const Patients = () => {
   const theme = useTheme()
