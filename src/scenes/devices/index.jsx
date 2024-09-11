@@ -1,128 +1,164 @@
-import { Box, Typography, useTheme } from '@mui/material'
-import { DataGrid } from '@mui/x-data-grid'
+import { useState } from 'react'
 import { tokens } from '../../theme'
 import { mockDataTeam } from '../../data/mockData'
 import Header from '../../components/Header'
-import { Padding } from '@mui/icons-material'
+import { Table, Tag, Row, Col, Space, Form } from 'antd'
+import { Box, Typography, useTheme, Button } from '@mui/material'
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined'
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
+import AddSensor from '../../components/AddSensor'
 
 const Devices = () => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
+  const [isAddSensor, setIsAddSensor] = useState(false)
+  const handlePress = () => {
+    console.log('PRESSED')
+  }
+  const handleFormPress = () => {
+    console.log('opening up form')
+  }
   const columns = [
     {
-      field: 'name',
-      headerName: 'SENSOR NAME',
-      flex: 1,
-      cellClassName: 'name-column--cell',
+      dataIndex: 'name',
+      title: 'SENSOR NAME',
+      width: '20%',
     },
     {
-      field: 'type',
-      headerName: 'SENSOR TYPE',
-      flex: 1,
-      cellClassName: 'name-column--cell',
+      dataIndex: 'type',
+      title: 'SENSOR TYPE',
+      width: '10%',
     },
     {
-      field: 'macId',
-      headerName: 'MAC ID',
-      flex: 1,
-      cellClassName: 'name-column--cell',
+      dataIndex: 'macId',
+      title: 'MAC ID',
+      width: '10%',
     },
     {
-      field: 'availability',
-      headerName: 'AVAILABILITY',
-      flex: 1,
-      renderCell: ({ row: { availability } }) => {
+      dataIndex: 'availability',
+      title: 'AVAILABILITY',
+      key: 'availability',
+      width: '10%',
+      render: (text) => {
+        const color = text === 'AVAILABLE' ? '#87d068' : '#FFA500'
         return (
-          <Box
-            width="60%"
-            m="0 auto"
-            height="60%"
-            display="flex"
-            backgroundColor={
-              availability === 'AVAILABLE'
-                ? colors.greenAccent[600]
-                : availability === 'ALLOCATED'
-                ? colors.redAccent[600]
-                : colors.redAccent[600]
-            }
-            borderRadius="10px"
-          >
-            <Typography color={colors.grey[100]} sx={{ ml: '5px' }}>
-              {availability}
-            </Typography>
-          </Box>
+          <Tag color={color} style={{ borderRadius: '10px' }}>
+            {text.toUpperCase()}
+          </Tag>
         )
       },
     },
     {
-      field: 'status',
-      headerName: 'STATUS',
-      flex: 1,
-      renderCell: ({ row: { status } }) => {
+      dataIndex: 'status',
+      title: 'STATUS',
+      key: 'status',
+      width: '2%',
+      render: (text) => {
+        const color = text === 'ONLINE' ? '#87d068' : '#f50'
         return (
-          <Box
-            width="40%"
-            m="0 auto"
-            height="60%"
-            display="flex"
-            backgroundColor={
-              status === 'ONLINE'
-                ? colors.greenAccent[600]
-                : status === 'OFFLINE'
-                ? colors.redAccent[600]
-                : colors.redAccent[600]
-            }
-            borderRadius="10px"
-          >
-            <Typography color={colors.grey[100]} sx={{ ml: '5px' }}>
-              {status}
-            </Typography>
-          </Box>
+          <Tag color={color} style={{ borderRadius: '10px' }}>
+            {text.toUpperCase()}
+          </Tag>
         )
       },
+    },
+    {
+      title: '',
+      dataIndex: 'action',
+      key: 'action',
+      width: '10%',
+      render: (text, record) => (
+        <Row justify="center">
+          <Col>
+            <Space size="small">
+              <Button onClick={() => handlePress()}>
+                <SettingsOutlinedIcon htmlColor="blue" />
+              </Button>
+              <Button onClick={() => handlePress()}>
+                <DeleteOutlineOutlinedIcon htmlColor="red" />
+              </Button>
+            </Space>
+          </Col>
+        </Row>
+      ),
     },
   ]
 
   return (
-    <Box m="20px">
-      <Header title="SENSOR MANAGEMENT" />
+    <>
       <Box
-        m="20px 0 0 0"
-        height="77vh"
-        sx={{
-          '& .MuiDataGrid-root': {
-            border: 'none',
-          },
-          '& .MuiDataGrid-cell': {
-            borderBottom: 'none',
-            alignContent: 'center'
-          },
-          '& .name-column--cell': {
-            color: colors.grey[100],
-          },
-          '& .MuiDataGrid-columnHeader': {
-            backgroundColor: colors.blueAccent[800],
-            borderBottom: 'none',
-          },
-          '& .MuiDataGrid-virtualScroller': {
-            backgroundColor: colors.primary[400],
-          },
-          '& .MuiDataGrid-footerContainer': {
-            borderTop: 'none',
-            backgroundColor: colors.blueAccent[800],
-          },
-          '& .MuiCheckbox-root': {
-            color: `${colors.greenAccent[200]} !important`,
-          },
-          '& .MuiBox-root': {
-            alignItems:"center",
-            justifyContent: 'center',
-          }
-        }}
+        m="20px"
+        backgroundColor="white"
+        borderRadius="10px"
+        alignItems="center"
       >
-        <DataGrid rows={mockDataTeam} columns={columns} />
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          flexDirection="row"
+        >
+          <Header title="SENSOR MANAGEMENT" />
+          <Box>
+            <Button
+              onClick={() => {
+                setIsAddSensor(true);
+              }}
+              sx={{
+                backgroundColor: colors.greenAccent[700],
+                color: colors.grey[100],
+                fontSize: '14px',
+                fontWeight: 'bold',
+                padding: '10px 20px',
+                marginRight: '20px',
+              }}
+            >
+              <AddCircleOutlineOutlinedIcon sx={{ mr: '10px' }} />
+              ADD SENSOR
+            </Button>
+          </Box>
+        </Box>
+        <Box
+          m="20px 0 0 0"
+          height="79vh"
+          sx={{
+            '& .MuiDataGrid-root': {
+              border: 'none',
+            },
+            '& .ant-table-cell': {
+              borderBottom: 'none',
+              alignContent: 'center',
+            },
+            '& .name-column--cell': {
+              color: colors.grey[100],
+            },
+            '& .MuiDataGrid-columnHeader': {
+              backgroundColor: colors.blueAccent[800],
+              borderBottom: 'none',
+            },
+            '& .MuiDataGrid-virtualScroller': {
+              backgroundColor: colors.primary[400],
+            },
+            '& .MuiDataGrid-footerContainer': {
+              borderTop: 'none',
+              backgroundColor: colors.blueAccent[800],
+            },
+            '& .MuiCheckbox-root': {
+              color: `${colors.greenAccent[200]} !important`,
+            },
+            '& .MuiBox-root': {
+              alignItems: 'center',
+              justifyContent: 'center',
+            },
+          }}
+        >
+          <Table dataSource={mockDataTeam} columns={columns} />
+        </Box>
       </Box>
-    </Box>
+
+      <AddSensor modalState={isAddSensor} setModalState={setIsAddSensor} />
+    </>
   )
 }
 

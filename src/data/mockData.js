@@ -22,7 +22,7 @@ export const mockDataTeam = [
     name: "211088",
     type: "Finger",
     macId: "80e1261d4f99",
-    availability: "AVAILABLE",
+    availability: "ALLOCATED",
     status: "ONLINE"
   },
   {
@@ -38,7 +38,7 @@ export const mockDataTeam = [
     name: "21340001076D",
     type: "Chest",
     macId: "80e1261d4cc2",
-    availability: "AVAILABLE",
+    availability: "ALLOCATED",
     status: "ONLINE"
   },
   {
