@@ -2,17 +2,13 @@ import { useState } from 'react'
 import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar'
 import { Box, IconButton, Typography, useTheme } from '@mui/material'
 import { Link } from 'react-router-dom'
-import "react-pro-sidebar/dist/css/styles.css";
+import 'react-pro-sidebar/dist/css/styles.css'
 import { tokens } from '../../theme'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined'
-import Sensors  from '@mui/icons-material/Sensors';
-import ReceiptOutlinedIcon from '@mui/icons-material/ReceiptOutlined'
-import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined'
-import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined'
-import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined'
+import Sensors from '@mui/icons-material/Sensors'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined'
-import MenuOpenOutlinedIcon from '@mui/icons-material/MenuOpenOutlined';
+import MenuOpenOutlinedIcon from '@mui/icons-material/MenuOpenOutlined'
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme()
@@ -58,7 +54,11 @@ const NavSidebar = () => {
         },
       }}
     >
-      <ProSidebar collapsed={isCollapsed} backgroundColor="#1E2A38" style={{maxHeight:"100vh"}}>
+      <ProSidebar
+        collapsed={isCollapsed}
+        backgroundColor="#1E2A38"
+        style={{ maxHeight: '100vh' }}
+      >
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
@@ -79,8 +79,9 @@ const NavSidebar = () => {
                 <Typography variant="h3" color={colors.grey[100]}>
                   Respiree
                 </Typography>
-                <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
-                </IconButton>
+                <IconButton
+                  onClick={() => setIsCollapsed(!isCollapsed)}
+                ></IconButton>
               </Box>
             )}
           </MenuItem>
@@ -140,43 +141,6 @@ const NavSidebar = () => {
               title="Manage Patients"
               to="/patients"
               icon={<PeopleOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Invoices Balances"
-              to="/invoices"
-              icon={<ReceiptOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-
-            {/* <Typography
-              variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: '15px 0 5px 20px' }}
-            >
-              Pages
-            </Typography> */}
-
-            <Item
-              title="Profile Form"
-              to="/form"
-              icon={<PersonOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Calendar"
-              to="/calendar"
-              icon={<CalendarTodayOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="FAQ Page"
-              to="/faq"
-              icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

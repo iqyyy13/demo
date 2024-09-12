@@ -1,5 +1,3 @@
-import { tokens } from "../theme";
-
 export const mockDataTeam = [
   {
     id: 1,
@@ -7,7 +5,8 @@ export const mockDataTeam = [
     type: "Chest",
     macId: "80e1277bb6e1",
     availability: "AVAILABLE",
-    status: "ONLINE"
+    status: "ONLINE",
+    organisation: "Demo"
   },
   {
     id: 2,
@@ -15,7 +14,8 @@ export const mockDataTeam = [
     type: "Chest",
     macId: "80e1261d4d87",
     availability: "AVAILABLE",
-    status: "OFFLINE"
+    status: "OFFLINE",
+    organisation: "Demo"
   },
   {
     id: 3,
@@ -23,7 +23,8 @@ export const mockDataTeam = [
     type: "Finger",
     macId: "80e1261d4f99",
     availability: "ALLOCATED",
-    status: "ONLINE"
+    status: "ONLINE",
+    organisation: "Demo"
   },
   {
     id: 4,
@@ -31,7 +32,8 @@ export const mockDataTeam = [
     type: "Chest",
     macId: "80e1261d5060",
     availability: "AVAILABLE",
-    status: "OFFLINE"
+    status: "OFFLINE",
+    organisation: "Demo"
   },
   {
     id: 5,
@@ -39,7 +41,8 @@ export const mockDataTeam = [
     type: "Chest",
     macId: "80e1261d4cc2",
     availability: "ALLOCATED",
-    status: "ONLINE"
+    status: "ONLINE",
+    organisation: "Demo"
   },
   {
     id: 6,
@@ -47,7 +50,8 @@ export const mockDataTeam = [
     type: "Finger",
     macId: "80e1261d471b",
     availability: "AVAILABLE",
-    status: "ONLINE"
+    status: "ONLINE",
+    organisation: "Demo"
   },
   {
     id: 7,
@@ -55,7 +59,8 @@ export const mockDataTeam = [
     type: "Chest",
     macId: "80e1261d4ee9",
     availability: "AVAILABLE",
-    status: "ONLINE"
+    status: "ONLINE",
+    organisation: "Demo"
   },
   {
     id: 8,
@@ -63,14 +68,7 @@ export const mockDataTeam = [
     type: "Finger",
     macId: "80e1261d4678",
     availability: "AVAILABLE",
-    status: "OFFLINE"
-  },
-  {
-    id: 9,
-    name: "RSB2A2C4",
-    type: "Chest",
-    macId: "80e126b0b2a2",
-    availability: "AVAILABLE",
-    status: "ONLINE"
+    status: "OFFLINE",
+    organisation: "Demo"
   },
 ];

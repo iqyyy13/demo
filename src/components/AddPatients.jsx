@@ -1,9 +1,9 @@
-import { Modal, Divider, Form, Space, Input, Row, Col, Select } from 'antd'
+import { Modal, Divider, Form, Space, Input, Row, Col } from 'antd'
 import Title from './Title'
 import Styled from 'styled-components'
 import { Card, MainActionButton } from '../styles/components'
 
-const AddSensor = (props) => {
+const AddPatients = (props) => {
   console.log('YES')
   const { modalState, setModalState } = props
   const [form] = Form.useForm()
@@ -27,7 +27,7 @@ const AddSensor = (props) => {
       width="60vw"
     >
       <div>
-        <Title title="ADD SENSOR" />
+        <Title title="PATIENT MANAGEMENT" />
         <Divider style={{ margin: '12px 0' }} />
         <Title title="General Details" />
         <Form form={form} layout="vertical">
@@ -44,50 +44,6 @@ const AddSensor = (props) => {
                 ]}
               >
                 <Input placeholder="Name" />
-              </Form.Item>
-
-              <Form.Item
-                name="macId"
-                label="MAC ID"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Enter Sensor MAC address, e.g. 00112233FFEE!',
-                  },
-                ]}
-              >
-                <Input placeholder="MAC ID" />
-              </Form.Item>
-
-              <Form.Item
-                name="organisation"
-                label="ORGANISATION"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please choose an organisation',
-                  },
-                ]}
-              >
-                <Select placeholder="Organisation">
-                  <Select.Option value="Demo">Demo</Select.Option>
-                </Select>
-              </Form.Item>
-
-              <Form.Item
-                name="type"
-                label="SENSOR TYPE"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please choose sensor type',
-                  },
-                ]}
-              >
-                <Select placeholder="Sensor Type">
-                  <Select.Option value="Finger">Finger</Select.Option>
-                  <Select.Option value="Chest">Chest</Select.Option>
-                </Select>
               </Form.Item>
             </StyledCard>
             <Row justify="center" gutter={[24, 24]}>
@@ -109,7 +65,7 @@ const AddSensor = (props) => {
   )
 }
 
-export default AddSensor
+export default AddPatients
 
 const StyledCard = Styled(Card)`
 	.ant-card-body {

@@ -26,6 +26,11 @@ const Devices = () => {
       width: '20%',
     },
     {
+      dataIndex: 'organisation',
+      title: 'ORGANISATION',
+      width: '10%',
+    },
+    {
       dataIndex: 'type',
       title: 'SENSOR TYPE',
       width: '10%',
