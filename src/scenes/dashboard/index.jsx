@@ -20,6 +20,7 @@ const Dashboard = () => {
         <thead>
           <tr>
             <th>ID</th>
+            <th>Patient ID</th>
             <th>Name</th>
             <th>Type</th>
             <th>Mac ID</th>
@@ -32,6 +33,7 @@ const Dashboard = () => {
           {data.map((d,i) => (
             <tr key={i}>
               <td>{d.id}</td>
+              <td>{d.pid}</td>
               <td>{d.name}</td>
               <td>{d.type}</td>
               <td>{d.macId}</td>

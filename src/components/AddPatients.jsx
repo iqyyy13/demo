@@ -1,17 +1,27 @@
-import { Modal, Divider, Form, Space, Input, Row, Col } from 'antd'
+import { Modal, Divider, Form, Space, Input, Row, Col, message } from 'antd'
 import Title from './Title'
 import Styled from 'styled-components'
 import { Card, MainActionButton } from '../styles/components'
 
 const AddPatients = (props) => {
-  console.log('YES')
   const { modalState, setModalState } = props
   const [form] = Form.useForm()
+
   const handleCancel = () => {
     setModalState(false)
   }
   const onOk = () => {
     console.log('OK')
+  }
+
+  const handleSubmit = async () => {
+    try {
+      const values = await form.validateFields()
+      console.log('Form values:', values)
+      message.success('Form submit success')
+    } catch (error) {
+      console.log('Validation failed', error)
+    }
   }
 
   return (
@@ -21,9 +31,7 @@ const AddPatients = (props) => {
       onOk={() => onOk()}
       onCancel={handleCancel}
       open={modalState}
-      bodyStyle={{
-        padding: '60px 70px 40px',
-      }}
+      style={{ padding: '60px 70px 40px ' }}
       width="60vw"
     >
       <div>
@@ -53,7 +61,7 @@ const AddPatients = (props) => {
                 </MainActionButton>
               </Col>
               <Col>
-                <MainActionButton onClick={handleCancel} shape="round" cancel>
+                <MainActionButton onClick={handleSubmit} shape="round" cancel>
                   SAVE
                 </MainActionButton>
               </Col>

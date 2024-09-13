@@ -10,7 +10,7 @@ const Title = ({ title, subtitle }) => {
         variant="h5"
         color={colors.grey[800]}
         fontWeight="bold"
-        sx={{ m: "10px 0 5px 10px" }}
+        sx={{ m: "20px 0 5px 10px" }}
       >
         {title}
       </Typography>

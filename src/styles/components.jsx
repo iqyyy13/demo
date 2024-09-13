@@ -1,15 +1,8 @@
 import {
   Button as AntButton,
   Card as AntCard,
-  Switch as AntSwitch,
-  Tag as AntTag,
-  Tooltip as AntTooltip,
-  Breadcrumb,
-  Table,
 } from 'antd'
-import React from 'react'
 import styled from 'styled-components'
-import { tokens, themeSettings } from '../theme'
 
 export const Card = styled(AntCard)`
   background-color: ${(props) => props.color || 'white'};

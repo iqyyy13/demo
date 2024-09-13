@@ -19,11 +19,24 @@ const Devices = () => {
   const handleFormPress = () => {
     console.log('opening up form')
   }
+  const editSensor = () => {
+    console.log('EDIT')
+  }
+
+  const deleteSensor = () => {
+    console.log('DELETE')
+  }
+  
   const columns = [
     {
       dataIndex: 'name',
       title: 'SENSOR NAME',
       width: '20%',
+    },
+    {
+      dataIndex: 'pid',
+      title: 'PATIENT ID',
+      width: '5%',
     },
     {
       dataIndex: 'organisation',
@@ -44,7 +57,7 @@ const Devices = () => {
       dataIndex: 'availability',
       title: 'AVAILABILITY',
       key: 'availability',
-      width: '10%',
+      width: '5%',
       render: (text) => {
         const color = text === 'AVAILABLE' ? '#87d068' : '#FFA500'
         return (
@@ -58,7 +71,7 @@ const Devices = () => {
       dataIndex: 'status',
       title: 'STATUS',
       key: 'status',
-      width: '2%',
+      width: '5%',
       render: (text) => {
         const color = text === 'ONLINE' ? '#87d068' : '#f50'
         return (
@@ -77,10 +90,10 @@ const Devices = () => {
         <Row justify="center">
           <Col>
             <Space size="small">
-              <Button onClick={() => handlePress()}>
+              <Button onClick={() => editSensor()}>
                 <SettingsOutlinedIcon htmlColor="blue" />
               </Button>
-              <Button onClick={() => handlePress()}>
+              <Button onClick={() => deleteSensor()}>
                 <DeleteOutlineOutlinedIcon htmlColor="red" />
               </Button>
             </Space>

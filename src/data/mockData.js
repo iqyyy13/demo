@@ -6,7 +6,8 @@ export const mockDataTeam = [
     macId: "80e1277bb6e1",
     availability: "AVAILABLE",
     status: "ONLINE",
-    organisation: "Demo"
+    organisation: "Demo",
+    pId: "",
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ export const mockDataTeam = [
     macId: "80e1261d4d87",
     availability: "AVAILABLE",
     status: "OFFLINE",
-    organisation: "Demo"
+    organisation: "Demo",
+    pId: "",
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ export const mockDataTeam = [
     macId: "80e1261d4f99",
     availability: "ALLOCATED",
     status: "ONLINE",
-    organisation: "Demo"
+    organisation: "Demo",
+    pId: "",
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export const mockDataTeam = [
     macId: "80e1261d5060",
     availability: "AVAILABLE",
     status: "OFFLINE",
-    organisation: "Demo"
+    organisation: "Demo",
+    pId: "",
   },
   {
     id: 5,
@@ -42,7 +46,8 @@ export const mockDataTeam = [
     macId: "80e1261d4cc2",
     availability: "ALLOCATED",
     status: "ONLINE",
-    organisation: "Demo"
+    organisation: "Demo",
+    pId: "",
   },
   {
     id: 6,
@@ -51,7 +56,8 @@ export const mockDataTeam = [
     macId: "80e1261d471b",
     availability: "AVAILABLE",
     status: "ONLINE",
-    organisation: "Demo"
+    organisation: "Demo",
+    pId: "",
   },
   {
     id: 7,
@@ -60,7 +66,8 @@ export const mockDataTeam = [
     macId: "80e1261d4ee9",
     availability: "AVAILABLE",
     status: "ONLINE",
-    organisation: "Demo"
+    organisation: "Demo",
+    pId: "",
   },
   {
     id: 8,
@@ -69,6 +76,7 @@ export const mockDataTeam = [
     macId: "80e1261d4678",
     availability: "AVAILABLE",
     status: "OFFLINE",
-    organisation: "Demo"
+    organisation: "Demo",
+    pId: "",
   },
 ];

@@ -4,7 +4,6 @@ import Styled from 'styled-components'
 import { Card, MainActionButton } from '../styles/components'
 
 const AddSensor = (props) => {
-  console.log('YES')
   const { modalState, setModalState } = props
   const [form] = Form.useForm()
   const handleCancel = () => {
@@ -13,6 +12,16 @@ const AddSensor = (props) => {
   const onOk = () => {
     console.log('OK')
   }
+
+  // const handleSubmit = async () => {
+  //   try {
+  //     const values = await form.validateFields()
+  //     console.log('Form values:', values)
+  //     message.success('Form submit success')
+  //   } catch (error) {
+  //     console.log('Validation failed', error)
+  //   }
+  // }
 
   return (
     <Modal

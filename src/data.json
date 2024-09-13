@@ -72,5 +72,48 @@
       "status": "OFFLINE",
       "organisation": "Demo"
     }
+  ],
+
+  "patients": [
+    {
+      "key": "1",
+      "name": "PatientA1",
+      "pid": "1"
+    },
+    {
+      "key": "2",
+      "name": "PatientA2",
+      "pid": "2"
+    },
+    {
+      "key": "3",
+      "name": "PatientA3",
+      "pid": "3"
+    },
+    {
+      "key": "4",
+      "name": "PatientA4",
+      "pid": "4"
+    },
+    {
+      "key": "5",
+      "name": "PatientA5",
+      "pid": "5"
+    },
+    {
+      "key": "6",
+      "name": "PatientA6",      
+      "pid": "6"
+    },
+    {
+      "key": "7",
+      "name": "PatientA7",
+      "pid": "7"
+    },
+    {
+      "key": "8",
+      "name": "PatientA8",
+      "pid": "8"
+    }
   ]
 }
